@@ -25,7 +25,6 @@ int main(void) {
     unsigned char tmpC = 0x00;
     unsigned char tmpD = 0x00;
     unsigned short totW = 0x00;
-    unsigned char shiftTot = 0x00;
     unsigned char balW = 0x00;
     
     /* Insert your solution below */
@@ -33,12 +32,15 @@ int main(void) {
 	tmpA = PINA;
 	tmpB = PINB;
 	tmpC = PINC;
-	tmpD = 0x00;
 
+	tmpD = 0x00;
+	totW = 0x00;
+	balW = 0x00;
+	
 	totW = tmpA + tmpB + tmpC;
 	
 	if(totW > 0x8C) {
-	    tmpD = tmpD | 0x80;
+	    tmpD = tmpD | 0x01;
 	}
 	
 	if(tmpA > tmpC) {
@@ -49,14 +51,13 @@ int main(void) {
 	}
 	
 	if(balW > 0x50) {
-	    tmpD = tmpD | 0x40;
+	    tmpD = tmpD | 0x02;
 	}
 	
-	shiftTot = totW;	
-	
-	tmpD = tmpD | (shiftTot >> 2);
+	tmpD = tmpD | (totW & 0xFC);
 	
 	PORTD = tmpD;
+	
     }
     return 0;
 }
