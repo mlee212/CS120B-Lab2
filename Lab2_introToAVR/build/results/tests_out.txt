@@ -1,7 +1,9 @@
-Breakpoint 1 at 0xf2: file source/main.c, line 32.
-Note: automatically using hardware breakpoints for read-only addresses.
+No source file named main.c.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+test/initDebugger.gdb:13: Error in sourced command file:
+Argument required (one or more breakpoint numbers).
 ======================================================
 Running all tests..."
 
-"PINA: 0x50, PINB: 0x50, PINC: 0x50 PORTC: 0xBC"..."PINA: 0x28, PINB: 0x28, PINC: 0x28 PORTC: 0x1E"..."PINA: 0x5A, PINB: 0x50, PINC: 0x00 PORTC: 0xEA"...======================================================
-Quitting: Remote doesn't know how to detach
+"PINA: 0x50, PINB: 0x50, PINC: 0x50 PORTC: 0xBC"...test/tests.gdb:46: Error in sourced command file:
+Remote connection closed
